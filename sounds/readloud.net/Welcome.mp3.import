@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Welcome.mp3-695cfb011a95308d83e016ca5dfb8166.mp3str"
+
+[deps]
+
+source_file="res://sounds/readloud.net/Welcome.mp3"
+dest_files=[ "res://.import/Welcome.mp3-695cfb011a95308d83e016ca5dfb8166.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

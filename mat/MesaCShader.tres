@@ -3,7 +3,7 @@
 [resource]
 code = "shader_type spatial;
 
-uniform float uv_scale = 1f;
+uniform float uv_scale = 1.f;
 
 uniform sampler2D sand1_tex : hint_albedo;
 uniform sampler2D sand2_tex : hint_albedo;
@@ -22,7 +22,7 @@ void vertex() {
 
 void fragment() {
 	vec2 uv = UV * uv_scale;
-	float blend = texture(layering_noise, interp_world_pos.xz / 10000f).r;
+	float blend = texture(layering_noise, interp_world_pos.xz / 10000.f).r;
 	
 	ALBEDO = mix(texture(sand1_tex, uv), texture(sand2_tex, uv), blend).rgb;
 	NORMALMAP = mix(texture(sand1_norm, uv), texture(sand2_norm, uv), blend).rgb;

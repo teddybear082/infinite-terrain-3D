@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Explain_Your_Controls.mp3-f445a64a9034ba417cce711deefe5530.mp3str"
+
+[deps]
+
+source_file="res://sounds/readloud.net/Explain_Your_Controls.mp3"
+dest_files=[ "res://.import/Explain_Your_Controls.mp3-f445a64a9034ba417cce711deefe5530.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

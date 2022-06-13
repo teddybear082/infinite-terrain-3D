@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Go_Dough_Game_Engine_912.mp3-148a15d6a76f133f3ef0206074da50d2.mp3str"
+
+[deps]
+
+source_file="res://sounds/readloud.net/Go_Dough_Game_Engine_912.mp3"
+dest_files=[ "res://.import/Go_Dough_Game_Engine_912.mp3-148a15d6a76f133f3ef0206074da50d2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

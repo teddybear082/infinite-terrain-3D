@@ -10,6 +10,7 @@ export (Material) var misty_hills_wmat = null
 export (Material) var mesa_cmat = null
 export (Material) var mesa_wmat = null
 
+onready var controller = $FPController/LeftHandController
 # Demo terrain #1 - Misty hills
 onready var misty_hills_demo = {
 	"needs_collider": false,
@@ -34,7 +35,7 @@ onready var mesa_demo = {
 
 
 func _ready():
-	var target = $SimplePlayer
+	var target = $FPController
 	var render_opts = {
 		"render_distance": render_distance,
 		"chunk_size": chunk_size,
@@ -44,3 +45,7 @@ func _ready():
 	
 	var terrain_generator = TerrainGeneratorAsync.new(target, render_opts, generation_opts)
 	add_child(terrain_generator)
+
+func _process(delta):
+	if controller.is_button_pressed(15):
+		get_tree().quit()

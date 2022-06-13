@@ -12,14 +12,14 @@ void fragment() {
 	vec3 screen_alb = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
 	
 	// Convert depth from screenspace
-	depth = depth * 2f - 1f;
+	depth = depth * 2.f - 1.f;
 	depth = PROJECTION_MATRIX[3][2] / (depth + PROJECTION_MATRIX[2][2]);
 	depth = depth + VERTEX.z;
 	
 	// Beer-Lambert law
 	depth = exp(-depth * mist_strength);
-	depth = clamp(depth, 0f, 1f);
+	depth = clamp(depth, 0.f, 1.f);
 	
-	ALBEDO = mist_color.rgb * (1f - depth);
-	ALPHA = 1f - depth;
+	ALBEDO = mist_color.rgb * (1.f - depth);
+	ALPHA = 1.f - depth;
 }"
