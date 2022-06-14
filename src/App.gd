@@ -28,7 +28,7 @@ onready var mesa_demo = {
 	"needs_collider": false,
 	"chunk_material": mesa_cmat,
 	"water_material": mesa_wmat,
-	"water_level": -30,
+	"water_level": -40,
 	"noise_octaves": 6,
 	"noise_period": 3000,
 	"noise_scale": 800
@@ -57,8 +57,6 @@ func _ready():
 	if demo_selection == 1:
 		generation_opts = mesa_demo
 	
-	print(str(generation_opts))
-		
 	var terrain_generator = TerrainGeneratorAsync.new(target, render_opts, generation_opts)
 	add_child(terrain_generator)
 

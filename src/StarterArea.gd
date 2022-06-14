@@ -101,8 +101,6 @@ func assign_words(pickable_wordmesh_text):
 	var random = RandomNumberGenerator.new()
 	random.randomize()
 	word_selection = random.randi() % inspirational_words.size()
-	print(str(word_selection))
 	pickable_wordmesh_text = inspirational_words[word_selection]
-	print(str(pickable_wordmesh_text))
 	inspirational_words.remove(word_selection)
 	
