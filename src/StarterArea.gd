@@ -12,13 +12,22 @@ func _ready():
 	$PickableWord2.visible = false
 	$PickableWord3.visible = false
 	$PickableWord4.visible = false
+	$PickableWord5.visible = false
+	$PickableWord6.visible = false
+	
 	yield(get_tree().create_timer(8),"timeout")
+	
 	$OQ_SplashScreen.queue_free()
+	
 	yield(get_tree().create_timer(40),"timeout")
+	
 	$PickableWord1.visible = true
 	$PickableWord2.visible = true
 	$PickableWord3.visible = true
 	$PickableWord4.visible = true
+	$PickableWord5.visible = true
+	$PickableWord6.visible = true
+	
 	yield(get_tree().create_timer(50),"timeout") # Replace with function body.
 	$SphereInstance.queue_free()
 	$InvisibleWall.queue_free()

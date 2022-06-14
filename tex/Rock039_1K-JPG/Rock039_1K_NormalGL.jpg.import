@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Metal011_1K_Metalness.jpg-ad74641a9f54b4bcf6bcc28c328a1f80.s3tc.stex"
-path.etc2="res://.import/Metal011_1K_Metalness.jpg-ad74641a9f54b4bcf6bcc28c328a1f80.etc2.stex"
+path.s3tc="res://.import/Rock039_1K_NormalGL.jpg-e653009b4892e8b37a830081eba0d652.s3tc.stex"
+path.etc2="res://.import/Rock039_1K_NormalGL.jpg-e653009b4892e8b37a830081eba0d652.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://tex/Metal011_1K-JPG/Metal011_1K_Metalness.jpg"
-dest_files=[ "res://.import/Metal011_1K_Metalness.jpg-ad74641a9f54b4bcf6bcc28c328a1f80.s3tc.stex", "res://.import/Metal011_1K_Metalness.jpg-ad74641a9f54b4bcf6bcc28c328a1f80.etc2.stex" ]
+source_file="res://tex/Rock039_1K-JPG/Rock039_1K_NormalGL.jpg"
+dest_files=[ "res://.import/Rock039_1K_NormalGL.jpg-e653009b4892e8b37a830081eba0d652.s3tc.stex", "res://.import/Rock039_1K_NormalGL.jpg-e653009b4892e8b37a830081eba0d652.etc2.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
+compress/normal_map=1
 flags/repeat=true
 flags/filter=true
 flags/mipmaps=true

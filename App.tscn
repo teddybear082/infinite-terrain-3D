@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/app.gd" type="Script" id=2]
@@ -17,7 +17,7 @@
 [ext_resource path="res://src/OverlayLabel3D.gd" type="Script" id=15]
 [ext_resource path="res://fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=16]
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Direct_movement.tscn" type="PackedScene" id=17]
-[ext_resource path="res://addons/godot-xr-tools/functions/Function_Grapple_movement.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/PickableWord5.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/OQ_SplashScreen.tscn" type="PackedScene" id=19]
 [ext_resource path="res://tex/Ground049A_2K-JPG/Ground049A_2K_Color.jpg" type="Texture" id=20]
 [ext_resource path="res://src/StarterVoiceOvers.gd" type="Script" id=21]
@@ -28,6 +28,9 @@
 [ext_resource path="res://scenes/PickableWord2.tscn" type="PackedScene" id=26]
 [ext_resource path="res://scenes/PickableWord3.tscn" type="PackedScene" id=27]
 [ext_resource path="res://scenes/PickableWord4.tscn" type="PackedScene" id=28]
+[ext_resource path="res://scenes/PickableWord6.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/PickableRockA.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/PickableRockB.tscn" type="PackedScene" id=31]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -68,10 +71,10 @@ mesa_cmat = ExtResource( 3 )
 mesa_wmat = ExtResource( 4 )
 
 [node name="Light" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -0.707107, 0.707107, 0, -0.707107, -0.707107, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -0.707107, 0.707107, 0, -0.707107, -0.707107, 0, 150, 0 )
 
 [node name="FPController" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 125, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 150, 0 )
 far_z = 10000.0
 
 [node name="ARVRCamera" parent="FPController" index="1"]
@@ -86,20 +89,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, -0.05, 0.15 )
 max_speed = 5.0
 strafe = true
 
-[node name="Function_Grapple_movement" parent="FPController/LeftHandController" index="2" instance=ExtResource( 18 )]
-grapple_length = 20.0
-grapple_button_id = 1
-
-[node name="Function_Pickup" parent="FPController/LeftHandController" index="3" instance=ExtResource( 24 )]
+[node name="Function_Pickup" parent="FPController/LeftHandController" index="2" instance=ExtResource( 24 )]
 
 [node name="RightHand" parent="FPController/RightHandController" index="0" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, -0.05, 0.15 )
 
-[node name="Function_Grapple_movement" parent="FPController/RightHandController" index="1" instance=ExtResource( 18 )]
-grapple_length = 20.0
-grapple_button_id = 1
-
-[node name="Function_Pickup" parent="FPController/RightHandController" index="2" instance=ExtResource( 24 )]
+[node name="Function_Pickup" parent="FPController/RightHandController" index="1" instance=ExtResource( 24 )]
 
 [node name="PlayerBody" parent="FPController" instance=ExtResource( 7 )]
 
@@ -135,7 +130,7 @@ width = 600.0
 script = ExtResource( 15 )
 
 [node name="StarterArea" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 124, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 149, 0 )
 script = ExtResource( 23 )
 
 [node name="FloorMeshInstance" type="MeshInstance" parent="StarterArea"]
@@ -174,17 +169,62 @@ script = ExtResource( 21 )
 [node name="PickableWord1" parent="StarterArea" instance=ExtResource( 25 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94847, 1.82722, -1.342 )
 gravity_scale = 0.0
+reset_transform_on_pickup = false
+ranged_grab_method = 0
 
 [node name="PickableWord2" parent="StarterArea" instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.255912, 1.45814, -1.37825 )
 gravity_scale = 0.0
+reset_transform_on_pickup = false
+ranged_grab_method = 0
 
 [node name="PickableWord3" parent="StarterArea" instance=ExtResource( 27 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104395, 1.76287, -1.3976 )
 gravity_scale = 0.0
+reset_transform_on_pickup = false
+ranged_grab_method = 0
 
 [node name="PickableWord4" parent="StarterArea" instance=ExtResource( 28 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.505579, 1.91204, -1.27525 )
 gravity_scale = 0.0
+reset_transform_on_pickup = false
+ranged_grab_method = 0
+
+[node name="PickableWord5" parent="StarterArea" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.334323, 1.20192, -1.27691 )
+ranged_grab_method = 0
+
+[node name="PickableWord6" parent="StarterArea" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.842295, 1.1758, -1.25835 )
+gravity_scale = 0.0
+ranged_grab_method = 0
+
+[node name="PickableRockA" parent="StarterArea" instance=ExtResource( 30 )]
+transform = Transform( 0.491573, -0.870837, 0, 0.870837, 0.491573, 0, 0, 0, 1, 3.76866, 0.527328, 0 )
+mass = 10.0
+
+[node name="PickableRockA4" parent="StarterArea" instance=ExtResource( 30 )]
+transform = Transform( 0.760902, 0.197538, -0.618067, 0.450231, 0.525185, 0.722131, 0.467248, -0.827744, 0.310676, 4.47485, 0.527328, 0.170708 )
+mass = 10.0
+
+[node name="PickableRockA3" parent="StarterArea" instance=ExtResource( 30 )]
+transform = Transform( 0.765831, 0.643042, 0, -0.643042, 0.765831, 0, 0, 0, 1, 3.76866, 0.527328, 0.804984 )
+mass = 10.0
+
+[node name="PickableRockA2" parent="StarterArea" instance=ExtResource( 30 )]
+transform = Transform( 0.491573, -0.870837, 0, 0.870837, 0.491573, 0, 0, 0, 1, -4.25502, 0.527328, 1.68998 )
+mass = 10.0
+
+[node name="PickableRockB" parent="StarterArea" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08478, 0.539459, 0.99131 )
+
+[node name="PickableRockB4" parent="StarterArea" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.411, 0.524567, 2.429 )
+
+[node name="PickableRockB2" parent="StarterArea" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.493, 0.501968, 0.991 )
+
+[node name="PickableRockB3" parent="StarterArea" instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.493, 0.5327, -1.041 )
 
 [editable path="FPController"]
