@@ -14,7 +14,7 @@ points = PoolVector3Array( -33.7329, 39.3545, -31.4463, 56.1818, 39.6559, 24.602
 mass = 10.0
 
 [node name="PickupCenter" parent="." index="0"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.263146 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.247836 )
 
 [node name="CollisionShape" parent="." index="1"]
 transform = Transform( 0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, 0, 0, 0 )

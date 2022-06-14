@@ -71,7 +71,7 @@ mesa_cmat = ExtResource( 3 )
 mesa_wmat = ExtResource( 4 )
 
 [node name="Light" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -0.707107, 0.707107, 0, -0.707107, -0.707107, 0, 150, 0 )
+transform = Transform( 1, 0, 0, 0, -0.707107, 0.707107, 0, -0.707107, -0.707107, 0, 153.234, 0 )
 
 [node name="FPController" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 150, 0 )
@@ -200,31 +200,31 @@ gravity_scale = 0.0
 ranged_grab_method = 0
 
 [node name="PickableRockA" parent="StarterArea" instance=ExtResource( 30 )]
-transform = Transform( 0.491573, -0.870837, 0, 0.870837, 0.491573, 0, 0, 0, 1, 3.76866, 0.527328, 0 )
+transform = Transform( 0.491573, -0.870837, 0, 0.870837, 0.491573, 0, 0, 0, 1, 2.58216, 0.527328, 1.64883 )
 mass = 10.0
 
 [node name="PickableRockA4" parent="StarterArea" instance=ExtResource( 30 )]
-transform = Transform( 0.760902, 0.197538, -0.618067, 0.450231, 0.525185, 0.722131, 0.467248, -0.827744, 0.310676, 4.47485, 0.527328, 0.170708 )
+transform = Transform( 0.760902, 0.197538, -0.618067, 0.450231, 0.525185, 0.722131, 0.467248, -0.827744, 0.310676, -3.64283, 0.527328, 0.158418 )
 mass = 10.0
 
 [node name="PickableRockA3" parent="StarterArea" instance=ExtResource( 30 )]
-transform = Transform( 0.765831, 0.643042, 0, -0.643042, 0.765831, 0, 0, 0, 1, 3.76866, 0.527328, 0.804984 )
+transform = Transform( 0.765831, 0.643042, 0, -0.643042, 0.765831, 0, 0, 0, 1, 3.36962, 0.527328, 1.82391 )
 mass = 10.0
 
 [node name="PickableRockA2" parent="StarterArea" instance=ExtResource( 30 )]
-transform = Transform( 0.491573, -0.870837, 0, 0.870837, 0.491573, 0, 0, 0, 1, -4.25502, 0.527328, 1.68998 )
+transform = Transform( 0.491573, -0.870837, 0, 0.870837, 0.491573, 0, 0, 0, 1, -3.37821, 0.527328, 1.68998 )
 mass = 10.0
 
 [node name="PickableRockB" parent="StarterArea" instance=ExtResource( 31 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08478, 0.539459, 0.99131 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29985, 0.539459, 0.853499 )
 
 [node name="PickableRockB4" parent="StarterArea" instance=ExtResource( 31 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.411, 0.524567, 2.429 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.71239, 0.524567, 1.81375 )
 
 [node name="PickableRockB2" parent="StarterArea" instance=ExtResource( 31 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.493, 0.501968, 0.991 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.08374, 0.501968, 0.991 )
 
 [node name="PickableRockB3" parent="StarterArea" instance=ExtResource( 31 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.493, 0.5327, -1.041 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97399, 0.5327, 2.38234 )
 
 [editable path="FPController"]

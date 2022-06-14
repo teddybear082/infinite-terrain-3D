@@ -13,7 +13,7 @@ points = PoolVector3Array( 35.5835, 69.4678, 69.9999, -63.7449, 33.015, -98.9749
 [node name="PickableRockA" instance=ExtResource( 2 )]
 
 [node name="PickupCenter" parent="." index="0"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.267922, 0.0719003, -0.00192358 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.260925, 0.0719003, -0.00192358 )
 
 [node name="CollisionShape" parent="." index="1"]
 transform = Transform( 0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, 0, 0, 0 )

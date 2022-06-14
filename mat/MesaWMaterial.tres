@@ -4,5 +4,5 @@
 
 [resource]
 shader = ExtResource( 1 )
-shader_param/mist_color = Color( 0.74902, 0.721569, 0.666667, 1 )
+shader_param/mist_color = Color( 0.764706, 0.945098, 0.945098, 1 )
 shader_param/mist_strength = 0.002

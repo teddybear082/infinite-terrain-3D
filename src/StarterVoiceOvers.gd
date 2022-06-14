@@ -19,7 +19,7 @@ func _ready():
 	stream = playing_stream
 	play()
 	playing_stream = load("res://sounds/readloud.net/Enjoy_Your_Flight.mp3")
-	yield(get_tree().create_timer(73),"timeout")
+	yield(get_tree().create_timer(48),"timeout")
 	stream = playing_stream
 	play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.

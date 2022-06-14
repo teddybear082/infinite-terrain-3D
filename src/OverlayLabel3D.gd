@@ -116,13 +116,15 @@ func _ready():
 	text = "Take some deep breaths and prepare for your flight.  Loading the world..."
 	yield(get_tree().create_timer(5),"timeout")
 	for i in 100:
-		yield(get_tree().create_timer(.4),"timeout")
+		yield(get_tree().create_timer(.2),"timeout")
 		text = "Loading progress: " + str(i) + " percent"
 	text = "Enjoy.  Relax. Let Go.    You can press left trigger to quit anytime."
 	yield(get_tree().create_timer(10), "timeout")
 	var size_of_for_loop = list_of_quotes.size()-1
+	var random = RandomNumberGenerator.new()
+	random.randomize()
 	for i in size_of_for_loop:
-		quoteselection = (randi() % list_of_quotes.size())
+		quoteselection = random.randi() % list_of_quotes.size()
 		playing_quote = list_of_quotes[quoteselection]
 		text = playing_quote
 		list_of_quotes.remove(quoteselection)

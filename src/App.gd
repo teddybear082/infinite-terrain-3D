@@ -10,6 +10,7 @@ export (Material) var misty_hills_wmat = null
 export (Material) var mesa_cmat = null
 export (Material) var mesa_wmat = null
 
+#need this to map button to exit on VR controllers
 onready var controller = $FPController/LeftHandController
 # Demo terrain #1 - Misty hills
 onready var misty_hills_demo = {
@@ -33,7 +34,7 @@ onready var mesa_demo = {
 	"noise_scale": 800
 }
 
-
+#change target to VR first person controller instead of flat camera
 func _ready():
 	var target = $FPController
 	var render_opts = {
@@ -41,11 +42,27 @@ func _ready():
 		"chunk_size": chunk_size,
 		"chunk_density": chunk_density
 	}
-	var generation_opts = misty_hills_demo
 	
+	#make scene random
+	var random = RandomNumberGenerator.new()
+	random.randomize()
+	var demo_selection = random.randi() % 2
+	print(demo_selection)
+	
+	var generation_opts = null
+	
+	if demo_selection == 0:
+		generation_opts = misty_hills_demo
+	
+	if demo_selection == 1:
+		generation_opts = mesa_demo
+	
+	print(str(generation_opts))
+		
 	var terrain_generator = TerrainGeneratorAsync.new(target, render_opts, generation_opts)
 	add_child(terrain_generator)
 
+#quit if trigger button pressed on left controller
 func _process(delta):
 	if controller.is_button_pressed(15):
 		get_tree().quit()
