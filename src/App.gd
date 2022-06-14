@@ -28,7 +28,7 @@ onready var mesa_demo = {
 	"needs_collider": false,
 	"chunk_material": mesa_cmat,
 	"water_material": mesa_wmat,
-	"water_level": -INF,
+	"water_level": -30,
 	"noise_octaves": 6,
 	"noise_period": 3000,
 	"noise_scale": 800
