@@ -31,7 +31,7 @@
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Turn_movement.tscn" type="PackedScene" id=29]
 [ext_resource path="res://scenes/PickableRockA.tscn" type="PackedScene" id=30]
 [ext_resource path="res://scenes/PickableRockB.tscn" type="PackedScene" id=31]
-[ext_resource path="res://mat/MesaWMaterial.tres" type="Material" id=32]
+[ext_resource path="res://mat/water.material" type="Material" id=32]
 [ext_resource path="res://addons/godot-xr-tools/functions/Locomotion_WalkInPlace.tscn" type="PackedScene" id=33]
 
 [sub_resource type="DynamicFont" id=1]
