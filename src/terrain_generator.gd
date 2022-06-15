@@ -114,7 +114,10 @@ func add_chunk(chunk_position: Vector2) -> void:
 		var water_mesh = MeshInstance.new()		
 		water_mesh.mesh = PlaneMesh.new()
 		water_mesh.mesh.surface_set_material(0, _water_material)
-		water_mesh.mesh.size = Vector2(_chunk_size, _chunk_size)
+		if str(_water_material.get_path()) == "res://mat/MesaWMaterial.tres":
+			water_mesh.mesh.size = Vector2(_chunk_size+3, _chunk_size+3)
+		else:
+			water_mesh.mesh.size = Vector2(_chunk_size, _chunk_size)
 		
 		water_mesh.translation = Vector3(
 				position.x + _chunk_size / 2.0, 
