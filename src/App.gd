@@ -23,6 +23,7 @@ onready var misty_hills_demo = {
 	"noise_scale": 1500
 }
 
+#If mesa, make terrain runnable for infinite run capability
 # Demo terrain #2 - Mesa
 onready var mesa_demo = {
 	"needs_collider": false,
@@ -57,6 +58,7 @@ func _ready():
 	
 	if demo_selection == 1:
 		generation_opts = mesa_demo
+		
 	
 	var terrain_generator = TerrainGeneratorAsync.new(target, render_opts, generation_opts)
 	add_child(terrain_generator)

@@ -129,6 +129,7 @@ func add_chunk(chunk_position: Vector2) -> void:
 	
 	if _needs_collider:
 		chunk_mesh.create_trimesh_collision()
+		
 	
 	_loaded_chunks[make_chunk_key(chunk_position)] = chunk_mesh
 	call_deferred("add_child", chunk_mesh)
