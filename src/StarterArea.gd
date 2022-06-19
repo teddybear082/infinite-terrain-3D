@@ -106,4 +106,6 @@ func assign_words(num_words):
 		new_mesh_instance.get_child(0).queue_free()
 		new_pickable_word.gravity_scale = 0
 		new_pickable_word.reset_transform_on_pickup = false
+		new_pickable_word.collision_layer = 131072
+		new_pickable_word.collision_mask = 131072
 		new_pickable_word.transform.origin = Vector3(random.randf_range(-3,3), random.randf_range(.5,1.8), random.randf_range(-1,-2))

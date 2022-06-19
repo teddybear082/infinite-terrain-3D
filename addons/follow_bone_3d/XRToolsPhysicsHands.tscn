@@ -1,0 +1,138 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://addons/follow_bone_3d/FollowBone3D.gd" type="Script" id=1]
+[ext_resource path="res://addons/follow_bone_3d/XRToolsPhysicsHands.gd" type="Script" id=2]
+
+[sub_resource type="SphereMesh" id=15]
+
+[sub_resource type="SphereShape" id=16]
+
+[sub_resource type="SphereShape" id=23]
+
+[sub_resource type="SphereShape" id=17]
+
+[sub_resource type="SphereMesh" id=18]
+
+[sub_resource type="SphereShape" id=25]
+
+[sub_resource type="CubeMesh" id=19]
+size = Vector3( 2, 0.5, 2 )
+
+[sub_resource type="BoxShape" id=20]
+extents = Vector3( 1, 0.25, 1 )
+
+[sub_resource type="BoxShape" id=24]
+extents = Vector3( 1, 0.25, 1 )
+
+[sub_resource type="CubeMesh" id=21]
+size = Vector3( 2, 0.5, 2 )
+
+[sub_resource type="BoxShape" id=22]
+extents = Vector3( 1, 0.25, 1 )
+
+[sub_resource type="BoxShape" id=26]
+extents = Vector3( 1, 0.25, 1 )
+
+[node name="XRToolsPhysicsHands" type="Spatial"]
+script = ExtResource( 2 )
+left_controller_nodepath = NodePath("../FPController/LeftHandController")
+right_controller_nodepath = NodePath("../FPController/RightHandController")
+
+[node name="LHFollowBone3D" type="Position3D" parent="."]
+transform = Transform( -0.0316173, 0.0127275, -0.000628471, -0.000167084, -0.00209511, -0.0340238, -0.0127419, -0.0315541, 0.0020056, -0.529683, 0.984693, 0.397283 )
+script = ExtResource( 1 )
+skeleton = NodePath("../../FPController/LeftHandController/LeftHand/LeftHand/Armature_Left/Skeleton")
+
+[node name="KinematicBody" type="KinematicBody" parent="LHFollowBone3D"]
+collision_layer = 131072
+collision_mask = 131072
+
+[node name="DebugMesh" type="MeshInstance" parent="LHFollowBone3D/KinematicBody"]
+visible = false
+mesh = SubResource( 15 )
+
+[node name="KCollisionShape" type="CollisionShape" parent="LHFollowBone3D/KinematicBody"]
+shape = SubResource( 16 )
+
+[node name="LHHapticArea" type="Area" parent="LHFollowBone3D/KinematicBody"]
+collision_layer = 2
+collision_mask = 6
+
+[node name="HapticCollisionShape" type="CollisionShape" parent="LHFollowBone3D/KinematicBody/LHHapticArea"]
+shape = SubResource( 23 )
+
+[node name="RHFollowBone3D" type="Position3D" parent="."]
+transform = Transform( 0.0316173, -0.0127275, 0.000628471, -0.000167084, -0.00209511, -0.0340238, -0.0127419, -0.0315541, 0.0020056, 0.529683, 0.984693, 0.397283 )
+script = ExtResource( 1 )
+skeleton = NodePath("../../FPController/RightHandController/RightHand/RightHand/Armature_Left/Skeleton")
+
+[node name="KinematicBody" type="KinematicBody" parent="RHFollowBone3D"]
+collision_layer = 131072
+collision_mask = 131072
+
+[node name="KCollisionShape" type="CollisionShape" parent="RHFollowBone3D/KinematicBody"]
+shape = SubResource( 17 )
+
+[node name="DebugMesh" type="MeshInstance" parent="RHFollowBone3D/KinematicBody"]
+visible = false
+mesh = SubResource( 18 )
+
+[node name="RHHapticArea" type="Area" parent="RHFollowBone3D/KinematicBody"]
+collision_layer = 2
+collision_mask = 6
+
+[node name="HapticCollisionShape" type="CollisionShape" parent="RHFollowBone3D/KinematicBody/RHHapticArea"]
+shape = SubResource( 25 )
+
+[node name="LPalmFollowBone3D" type="Position3D" parent="."]
+transform = Transform( -0.0339721, -0.00281232, -0.000149438, -0.000176133, 0.00392693, -0.0338613, 0.00281077, -0.0337447, -0.00392804, -0.53, 0.949478, 0.542664 )
+script = ExtResource( 1 )
+skeleton = NodePath("../../FPController/LeftHandController/LeftHand/LeftHand/Armature_Left/Skeleton")
+
+[node name="KinematicBody" type="KinematicBody" parent="LPalmFollowBone3D"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+collision_layer = 131072
+collision_mask = 131072
+
+[node name="DebugMesh" type="MeshInstance" parent="LPalmFollowBone3D/KinematicBody"]
+visible = false
+mesh = SubResource( 19 )
+
+[node name="KCollisionShape" type="CollisionShape" parent="LPalmFollowBone3D/KinematicBody"]
+shape = SubResource( 20 )
+
+[node name="LPalmHapticArea" type="Area" parent="LPalmFollowBone3D/KinematicBody"]
+collision_layer = 2
+collision_mask = 6
+
+[node name="HapticCollisionShape" type="CollisionShape" parent="LPalmFollowBone3D/KinematicBody/LPalmHapticArea"]
+shape = SubResource( 24 )
+
+[node name="RPalmFollowBone3D" type="Position3D" parent="."]
+transform = Transform( 0.0339721, 0.00281231, 0.000149437, -0.000176133, 0.00392693, -0.0338613, 0.00281077, -0.0337447, -0.00392804, 0.53, 0.949478, 0.542664 )
+script = ExtResource( 1 )
+skeleton = NodePath("../../FPController/RightHandController/RightHand/RightHand/Armature_Left/Skeleton")
+
+[node name="KinematicBody" type="KinematicBody" parent="RPalmFollowBone3D"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+collision_layer = 131072
+collision_mask = 131072
+
+[node name="DebugMesh" type="MeshInstance" parent="RPalmFollowBone3D/KinematicBody"]
+visible = false
+mesh = SubResource( 21 )
+
+[node name="KCollisionShape" type="CollisionShape" parent="RPalmFollowBone3D/KinematicBody"]
+shape = SubResource( 22 )
+
+[node name="RPalmHapticArea" type="Area" parent="RPalmFollowBone3D/KinematicBody"]
+collision_layer = 2
+collision_mask = 6
+
+[node name="CollisionShape" type="CollisionShape" parent="RPalmFollowBone3D/KinematicBody/RPalmHapticArea"]
+shape = SubResource( 26 )
+
+[connection signal="body_entered" from="LHFollowBone3D/KinematicBody/LHHapticArea" to="." method="_on_LHHapticArea_body_entered"]
+[connection signal="body_entered" from="RHFollowBone3D/KinematicBody/RHHapticArea" to="." method="_on_RHHapticArea_body_entered"]
+[connection signal="body_entered" from="LPalmFollowBone3D/KinematicBody/LPalmHapticArea" to="." method="_on_LPalmHapticArea_body_entered"]
+[connection signal="body_entered" from="RPalmFollowBone3D/KinematicBody/RPalmHapticArea" to="." method="_on_RPalmHapticArea_body_entered"]

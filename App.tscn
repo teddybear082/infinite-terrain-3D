@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/app.gd" type="Script" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://src/OverlayLabel3D.gd" type="Script" id=15]
 [ext_resource path="res://fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=16]
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Direct_movement.tscn" type="PackedScene" id=17]
+[ext_resource path="res://addons/follow_bone_3d/XRToolsPhysicsHands.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/OQ_SplashScreen.tscn" type="PackedScene" id=19]
 [ext_resource path="res://tex/Ground049A_2K-JPG/Ground049A_2K_Color.jpg" type="Texture" id=20]
 [ext_resource path="res://src/StarterVoiceOvers.gd" type="Script" id=21]
@@ -92,6 +93,8 @@ strafe = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, -0.05, 0.15 )
 
 [node name="Function_Pickup" parent="FPController/RightHandController" index="1" instance=ExtResource( 24 )]
+grab_collision_mask = 131075
+ranged_collision_mask = 131075
 
 [node name="Function_Turn_movement" parent="FPController/RightHandController" index="2" instance=ExtResource( 29 )]
 order = 35
@@ -203,4 +206,23 @@ mass = 20.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97399, 0.5327, 2.38234 )
 mass = 20.0
 
+[node name="XRToolsPhysicsHands" parent="." instance=ExtResource( 18 )]
+
+[node name="LHFollowBone3D" parent="XRToolsPhysicsHands" index="0"]
+transform = Transform( -0.0316173, 0.0127275, -0.000628471, -0.000167084, -0.00209511, -0.0340238, -0.0127419, -0.0315541, 0.0020056, -0.529683, 150.985, -0.505956 )
+selected_bone = 7
+
+[node name="RHFollowBone3D" parent="XRToolsPhysicsHands" index="1"]
+transform = Transform( 0.0316173, -0.0127275, 0.000628471, -0.000167084, -0.00209511, -0.0340238, -0.0127419, -0.0315541, 0.0020056, 0.529683, 150.985, -0.505956 )
+selected_bone = 7
+
+[node name="LPalmFollowBone3D" parent="XRToolsPhysicsHands" index="2"]
+transform = Transform( -0.0339721, -0.00281232, -0.000149438, -0.000176133, 0.00392693, -0.0338613, 0.00281077, -0.0337447, -0.00392804, -0.53, 150.949, -0.360575 )
+selected_bone = 8
+
+[node name="RPalmFollowBone3D" parent="XRToolsPhysicsHands" index="3"]
+transform = Transform( 0.0339721, 0.00281231, 0.000149437, -0.000176133, 0.00392693, -0.0338613, 0.00281077, -0.0337447, -0.00392804, 0.53, 150.949, -0.360575 )
+selected_bone = 8
+
 [editable path="FPController"]
+[editable path="XRToolsPhysicsHands"]
